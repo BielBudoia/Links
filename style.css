@@ -85,11 +85,12 @@ left: 0;
 z-index: 1;
 transform: translateY(-50%);
 
+animation: slide-out 0.2s forwards;
+
 }  
 
 .light #switch button {
-  right: 0;
-  left: initial;
+ animation: slide-in 0.2s forwards;
 }
 
 #switch span{
@@ -101,6 +102,11 @@ background: var(--surface-color);
 backdrop-filter: blur(4px);
 -webkit-backdrop-filter: blur(4px);
 border-radius: 9999px;
+}
+
+#switch button:hover {
+outline: 8px solid var(--stroke-logo);
+
 }
 
 /* links */
@@ -182,6 +188,8 @@ text-align: center;
 font-size: 14px;
 }
 
+/* background size */
+
 @media (min-width: 700px) {
 .root{
   --bg-url: url(./Assets/bg-desktop.png)
@@ -190,3 +198,26 @@ font-size: 14px;
   --bg-url: url(./Assets/bg-desktop-light.jpg)
 } 
 }
+
+/* Animation */
+
+@keyframes slide-in {
+from {
+  left:0;
+}
+to{
+  left: 50%;
+}
+  
+}
+
+@keyframes slide-out {
+from {
+  left:50%;
+}
+to{
+  left: 0;
+}
+  
+}
+  
